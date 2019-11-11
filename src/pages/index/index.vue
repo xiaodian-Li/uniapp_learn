@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<image class="logo" src="/static/logo.png" @click='goPersonInfo'></image>
 		<view>
 			<text class="title">{{title}}</text>
 		</view>
@@ -18,7 +18,12 @@
 
 		},
 		methods: {
-
+			goPersonInfo () {
+				console.log('点击进入个人中心')
+				uni.navigateTo({
+				    url: '/pages/personInfo/personInfo'
+				})
+			}
 		}
 	}
 </script>
