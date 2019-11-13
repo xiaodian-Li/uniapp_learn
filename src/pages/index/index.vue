@@ -1,21 +1,22 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png" @click='goPersonInfo'></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
+		<taskInfo @goPersonInfo='goPersonInfo'></taskInfo>
 	</view>
 </template>
 
 <script>
+	import taskInfo from "../../components/taskInfo.vue";
 	export default {
+		components:{
+			taskInfo
+		},
 		data() {
 			return {
 				title: 'Hello'
 			}
 		},
 		onLoad() {
-
+		
 		},
 		methods: {
 			goPersonInfo () {
@@ -30,8 +31,14 @@
 
 <style>
 	.content {
-		text-align: center;
-		height: 400upx;
+	  background: url('../../static/images/taskInstrBg.png') no-repeat;
+	  width: 100%;
+	  height: 100%;
+	  min-height: 100vh;
+	  overflow: hidden;
+	  background-size: 100%;
+	  padding-bottom: 50px;
+	  position: relative;
 	}
 
 	.logo {
