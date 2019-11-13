@@ -36,7 +36,7 @@
 	  </view>
 	</view>
 	<view class="task-btn">
-	  <view class="cancel-btn" @click='onCancel'>暂不考虑</view>
+	  <view class="cancel-btn" @tap='onCancel'>暂不考虑</view>
 	  <view class="confirm-btn" @tap='onConfirm'>领取任务</view>
 	</view>
 	</view>
@@ -51,6 +51,9 @@
 			};
 		},
 		methods: {
+			onCancel () {
+				this.$emit('onCancle')
+			},
 			onConfirm () {
 				this.$emit('goPersonInfo')
 			}

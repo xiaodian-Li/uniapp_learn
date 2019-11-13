@@ -1,6 +1,10 @@
 <template>
 	<view class="content">
-		<taskInfo @goPersonInfo='goPersonInfo'></taskInfo>
+		<taskInfo 
+			@goPersonInfo='goPersonInfo'
+			@onCancle='onCancle'
+		>
+		</taskInfo>
 	</view>
 </template>
 
@@ -24,6 +28,13 @@
 				uni.navigateTo({
 				    url: '/pages/personInfo/personInfo'
 				})
+			},
+			onCancle () {
+				uni.showToast({
+				    title: '要跳到app哒',
+				    duration: 2000,
+					icon: 'none'
+				});
 			}
 		}
 	}
